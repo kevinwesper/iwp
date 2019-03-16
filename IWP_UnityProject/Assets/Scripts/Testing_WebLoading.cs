@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class testing : MonoBehaviour
+public class Testing_WebLoading : MonoBehaviour
 {
     public void ButtonClick(string url)
     {
