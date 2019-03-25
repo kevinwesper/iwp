@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMissing: 0
   isHopeless: 0
-  goodArguments: []
+  goodArguments:
+  - Wet 1 artikel 1
+  arguments:
+  - argument: Wet 1, artikel 1
+    score: 10
   clientName: Generic Company
   clientintro: Wij hebben een probleem en zijn daar rechtshulp bij nodig.
   reactionList:
