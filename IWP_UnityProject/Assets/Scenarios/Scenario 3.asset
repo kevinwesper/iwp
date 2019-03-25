@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8a9d3b854b6cc64087359ac44e5cde3, type: 3}
-  m_Name: GenericCase
+  m_Name: Scenario 3
   m_EditorClassIdentifier: 
   isMissing: 0
   isHopeless: 0
-  goodArguments:
-  - Wet 1 artikel 1
-  arguments:
-  - argument: Wet 1, artikel 1
-    score: 10
-  clientName: Generic Company
+  arguments: []
+  clientName: Generic Name van Generic Company
   clientintro: Wij hebben een probleem en zijn daar rechtshulp bij nodig.
   reactionList:
-  - keyword: Wet 1
-    reaction: Dit zijn de gegevens die ik heb over wet 1.
+  - keyword: test
+    reaction: Dit is het derde scenario.

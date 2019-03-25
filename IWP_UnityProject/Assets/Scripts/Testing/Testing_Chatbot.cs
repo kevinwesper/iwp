@@ -9,6 +9,15 @@ public class Testing_Chatbot : MonoBehaviour
 
     [SerializeField] private Transform textSpawnTransform;
 
+    private Scenario scenario;
+
+    private void Awake()
+    {
+        scenario = FindObjectOfType<Settings>().pickedScenario;
+        SpawnText("Hallo, ik ben " + scenario.clientName);
+        SpawnText(scenario.clientintro);
+    }
+
     public void Typing()
     {
         Debug.Log("Still typing...");
@@ -24,22 +33,16 @@ public class Testing_Chatbot : MonoBehaviour
 
     private void CheckText()
     {
-        if (playerInputText.text.Contains("404"))
+        for (int i = 0; i < scenario.reactionList.Length; i++)
         {
-            SpawnText("Hallo, ik had een afspraak. Mijn naam is <GenericName>.");
-            SpawnText("Ik heb een probleem met het maken van deze game.");
-        }
-        else if (playerInputText.text.Contains("probleem"))
-        {
-            SpawnText("Het probleem is dat de code een bende wordt en ik nog geen idee heb hoe ik het schoon kan houden.");
-        }
-        else if (playerInputText.text.Contains("vaktaal"))
-        {
-            SpawnText("Ik kan ook nog niet goed bezig omdat ik nog geen voorbeeld heb van een casus.");
-        }
-        else
-        {
-            SpawnText("Sorry, ik begrijp niet goed wat u zegt, kunt u het misschien anders verwoorden?");
+            if (playerInputText.text.Contains(scenario.reactionList[i].keyword))
+            {
+                SpawnText(scenario.reactionList[i].reaction);
+            }
+            else
+            {
+                SpawnText("Sorry, ik begrijp niet wat je bedoelt.");
+            }
         }
     }
 

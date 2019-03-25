@@ -36,8 +36,6 @@ public class Scenario : ScriptableObject
 
     #region Answer Settings
     [Header("Answer Settings")]
-    
-    [Tooltip("List of good arguments for this case.")] public string[] goodArguments; // Give points per answer, amount of points needed to win???
 
     [Tooltip("List of good argmument keywords with score.")] public Arguments[] arguments;
     #endregion
