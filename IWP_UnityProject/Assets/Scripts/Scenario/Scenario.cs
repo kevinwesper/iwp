@@ -1,29 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System; //[Serializable]
+using System;
+
+[Serializable]
+public class Reaction
+{
+    public string keyword;
+    [TextArea] public string reaction;
+}
 
 [CreateAssetMenu]
 public class Scenario : ScriptableObject
 {
-    [Header("Answer settings")]
+    #region Scenario Settings
+    [Header("Scenario Settings")]
+
     [Tooltip("Is the client missing information?")]
     public bool isMissing;
     [Tooltip("Is the client's case hopeless?")]
     public bool isHopeless;
-    [Tooltip("Is the client lying?")]
-    public bool isLiar;
 
+    //public bool isLiar;
     // public bool isScared;
     // public bool isSad;
     // public bool isConfused;
+    #endregion
 
+    #region Answer Settings
+    [Header("Answer Settings")]
+    
     [Tooltip("List of good arguments for this case.")]
     public string[] goodArguments;
+    #endregion
 
-    [Header("Story settings")]
+    #region Story Settings
+    [Header("Story Settings")]
+
     [Tooltip("Name of the client.")]
     public string clientName;
+
     [Tooltip("Introductionary problem statement of the client.")]
     [TextArea] public string clientintro;
+
+    [Tooltip("Reactions by Keywords")]
+    public Reaction[] reactionList;
+
+    #endregion
 }
